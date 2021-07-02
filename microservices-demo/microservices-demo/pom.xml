@@ -13,9 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>microservices-skeleton</name>
     <description>Skeleton app for Spring Boot</description>
-    <packaging>
-        pom
-    </packaging>
+    <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
         <spring-boot-version>2.3.12.RELEASE</spring-boot-version>

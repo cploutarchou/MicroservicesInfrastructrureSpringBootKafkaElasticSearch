@@ -8,11 +8,11 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.microservices.demo</groupId>
-    <artifactId>microservices-demo</artifactId>
+    <groupId>com.microservices.skeleton</groupId>
+    <artifactId>microservices-skeleton</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservices-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>microservices-skeleton</name>
+    <description>Skeleton app for Spring Boot</description>
     <packaging>
         pom
     </packaging>

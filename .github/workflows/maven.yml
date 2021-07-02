@@ -20,4 +20,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn -B package --file microservices-demo/microservices-demo/pom.xml
+      run: mvn -B package --file microservices/microservices-skeleton-app/pom.xml

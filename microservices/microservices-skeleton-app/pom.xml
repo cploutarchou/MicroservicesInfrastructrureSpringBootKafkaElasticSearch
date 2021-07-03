@@ -2,6 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>twitter-to-kafka-service</module>
+    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -13,13 +16,14 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>microservices-skeleton</name>
     <description>Skeleton app for Spring Boot</description>
-    <packaging>
-        pom
-    </packaging>
+    <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
         <spring-boot-version>2.3.12.RELEASE</spring-boot-version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <twitter4j-plugin.version>4.0.7</twitter4j-plugin.version>
+        <lombok-plugin.version>1.18.20</lombok-plugin.version>
+        <spring-boot-configuration-processor.version>2.5.2</spring-boot-configuration-processor.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -28,7 +32,6 @@
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot-version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
@@ -41,6 +44,23 @@
 
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot-configuration-processor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-stream</artifactId>
+                <version>${twitter4j-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-plugin.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
 

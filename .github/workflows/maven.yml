@@ -24,4 +24,4 @@ jobs:
     - name: Build Application Skeleton module
       run: mvn -B package --file microservices/pom.xml
     - name: Build twitter to kafka service module
-      run: mvn -B -e -x package --file microservices/twitter-to-kafka-service/pom.xml
+      run: mvn -B -e -X package --file microservices/twitter-to-kafka-service/pom.xml

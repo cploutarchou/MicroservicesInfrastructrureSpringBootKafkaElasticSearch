@@ -13,9 +13,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.microservices</groupId>
-    <artifactId>microservices-skeleton</artifactId>
+    <artifactId>microservices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservices-skeleton</name>
+    <name>microservices</name>
     <description>Skeleton app for Spring Boot</description>
     <packaging>pom</packaging>
     <properties>

@@ -19,5 +19,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Maven
-      run: mvn -B package --file microservices/microservices-skeleton-app/pom.xml
+    - name: Build Skeleton app
+      run: mvn -B package --file microservices/pom.xml
+    - name: Build twitter-to-kafka-service
+      run: mvn -B package --file microservices/twitter-to-kafka-service/pom.xml

@@ -33,6 +33,7 @@ jobs:
           ELASTIC_VERSION: 7.9.1
           SERVICE_VERSION: 0.0.1-SNAPSHOT
           GLOBAL_NETWORK: application
-          GROUP_ID: com.microservices.
+          GROUP_ID: com.microservices
+
 
 

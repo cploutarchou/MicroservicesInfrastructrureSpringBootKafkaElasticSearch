@@ -5,7 +5,7 @@ twitter-to-kafka-service:
     - ethereum
     - binance
   welcome-message: Hello microservices!
-  enable-mock-tweets: true
+  enable-mock-tweets: false
   mock-min-tweet-length: 15
   mock-max-tweet-length: 15
   mock-sleep-ms : 1000

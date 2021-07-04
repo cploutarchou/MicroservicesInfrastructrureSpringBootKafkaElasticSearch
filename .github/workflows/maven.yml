@@ -19,9 +19,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build config module
-      run: mvn -B package --file microservices/app-config-data/pom.xml
-    - name: Build Application Skeleton module
+    - name: Build Application 
       run: mvn -B package --file microservices/pom.xml
-    - name: Build twitter to kafka service module
-      run: mvn -B -e -X package --file microservices/twitter-to-kafka-service/pom.xml
+

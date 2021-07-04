@@ -11,7 +11,7 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.microservices.skeleton</groupId>
+    <groupId>com.microservices</groupId>
     <artifactId>microservices-skeleton</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>microservices-skeleton</name>

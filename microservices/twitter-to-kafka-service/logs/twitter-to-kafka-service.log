@@ -1,0 +1,67 @@
+2021-07-04 14:42:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication on DESKTOP-UVJDED8 with PID 3244 (C:\workspace\MicroservicesInfrastructrureSpringBootKafkaElasticSearch\microservices\twitter-to-kafka-service\target\classes started by cplou in C:\workspace\MicroservicesInfrastructrureSpringBootKafkaElasticSearch\microservices)
+2021-07-04 14:42:08 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2021-07-04 14:42:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.498 seconds (JVM running for 1.081)
+2021-07-04 14:42:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2021-07-04 14:42:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - [Elon Musk, crypto, ethereum, binance]
+2021-07-04 14:42:09 [main] INFO  c.m.t.t.k.s.TwitterToKafkaServiceApplication - Hello microservices!
+2021-07-04 14:42:09 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2021-07-04 14:42:09 [main] INFO  c.m.t.t.k.s.r.i.TwitterKafkaStreamRunner - Started Filtering stream for keywords [Elon Musk, crypto, ethereum, binance]
+2021-07-04 14:42:10 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+2021-07-04 14:42:10 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @MoonDashBSC: 🚀MoonDash is now LIVE on @PancakeSwap ! 
+
+💰Token Buy-back
+🤑Lottery Prize Pool 
+💸Static Farming by holding
+💦Automatic-gener…
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @ATHena_DeFi: I'm the biggest #Polygon fangirl, so when I saw the @polkadogee #NFT marketplace on @0xPolygon I was ecstatic 😍
+
+#POLKADOG…
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @akash_kaleem @BabyDogeCoin 👉🏻 1+ BILION MARKET CAP
+👉🏻 300K + HOLDERS
+👉🏻 BORN JUNE 1ST 2021
+👉🏻 100K+ TELEGRAM FAMILY
+✅ THE NEXT DOGE
+✅ WITH ELON MUSK SUPPORT 
+
+@babydoge #babydoge
+@elonmusk baby https://t.co/4snNVjt9iv
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @Skyzox 📈 Binance and other exchanges supports Bitcoin Giveaway! Go to airdrop @BTC_BONUSES
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text #Cryptocurrency #Crypto #BinanceChain #Safethehumanity #STH ` #BSC 929 1204 1645 9120 7768 2031 6816 2576 5120 4254 5613 1778
+2021-07-04 14:42:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @paybswap: 📌PaybSwap Airdrop is live! 
+
+📌 Start the airdrop bot below and complete the tasks to get up to Up to 125 PAYB [~$1]
+
+📌  Also,…
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @subrata_karjee
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text #Bitcoin miner inflows reduced by 60,69% over the last 90 days, but outflows also reduced by 62,20%. At the same time over the last week miners have been selling way less even before the adjustment happened.  #Crypto #btc https://t.co/sgQKwSjCKR
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @BIMP_Official #BIMPisComing #BIMP #Crypto #notrugpull 
+@BIMP_Official
+Telegram👉 https://t.co/sAZYipGOc2
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @CryptoRedempti1 Yes I would. I'm also "all in" on #Crypto 
+If you see my bank account, I am broke
+If you see my portfolio, 🤫4+3 Figures🤭
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @CallOutScammers: I'm compiling a list of scammers on Crypto Twitter below with evidence. Will keep it updated as new information comes…
+2021-07-04 14:42:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @NewDogeCoin: Did you buy #NEWDOGE on #pancakeswap yet? If not you better hurry up! Big things coming! As the rest of the crypto market…
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @aliriza_yuksell: Is the crypto market volatile? Yes. 
+But should that stop from learning about it? NO. 
+Don't spend your own money to l…
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @binance: It makes you think... #Bitcoin https://t.co/kyew5P0S13
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @MadzMarketing @CoinMarketCap https://t.co/ObWw8ymkEF
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @earnwithrk Have u become millionaire with crypto
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text don't forget to follow us and activate the bell, for more free coins
+https://t.co/FwG2NYVyBo
+$doge $xrp $BNB $btc $coum @cz_binance @binance https://t.co/YMm5xUzPMm
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text @devrimcipartii @musaproglu https://t.co/jyLRIiTIwU Lütfen yardımcı olalım son 21 gün Çınar bebeği kaybetmeyelim Eyüp Çınar yaşasın 🙏 #EyüpÇınaraCanaol
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text $SWAPZ is TRENDING at #2 on @CoinMarketCap!!! #BSC #TRON
+#CRYPTO #BNB #SWAPZ 
+#SAY_NO_TO_SLIPPAGE https://t.co/oecFGwqeSz https://t.co/2EUUQVupmx
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @MadzMarketing: I’ll give $60 to one person in 60 mins 
+
+- Retweet This & Post On Timeline 👇
+
+$SWAPZ is TRENDING at #2 on @CoinMarketCap…
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @CoinMarketCap: Here's Last Week's Top Trending Tokens in Asia 🔥 
+
+#CoinMarketCap #Crypto #Cryptocurrency #Bitcoin #Altcoin #DeFi #Dogec…
+2021-07-04 14:42:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.t.t.k.s.l.TwitterKafkaStatusListener - Twitter Status with Text RT @adon_network: 🤯Do you have idea how adonx can change #mainstream #crypto assets transactions. Learn more about #adonx #features like at…

@@ -26,6 +26,7 @@
         <twitter4j-plugin.version>4.0.7</twitter4j-plugin.version>
         <lombok-plugin.version>1.18.20</lombok-plugin.version>
         <spring-boot-configuration-processor.version>2.5.2</spring-boot-configuration-processor.version>
+        <apache-avro-plugin.version>1.10.2</apache-avro-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -54,7 +55,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <version>${spring-boot-configuration-processor.version}</version>
@@ -70,6 +70,13 @@
                 <version>${lombok-plugin.version}</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${apache-avro-plugin.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>

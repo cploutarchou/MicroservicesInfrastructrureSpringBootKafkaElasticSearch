@@ -30,13 +30,19 @@
         <apache-avro-plugin.version>1.10.2</apache-avro-plugin.version>
         <spring-kafka.version>2.7.0</spring-kafka.version>
         <spring-retry.version>1.3.1</spring-retry.version>
-   </properties>
+        <spring-aop.version>2.5.4</spring-aop.version>
+    </properties>
     <dependencyManagement>
         <dependencies>
             <!-- Local -->
             <dependency>
                 <groupId>com.microservices</groupId>
                 <artifactId>app-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices</groupId>
+                <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -61,6 +67,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <version>${spring-boot-configuration-processor.version}</version>
+                <optional>false</optional>
             </dependency>
             <dependency>
                 <groupId>org.twitter4j</groupId>
@@ -88,6 +95,11 @@
                 <groupId>org.springframework.retry</groupId>
                 <artifactId>spring-retry</artifactId>
                 <version>${spring-retry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${spring-aop.version}</version>
             </dependency>
 
         </dependencies>

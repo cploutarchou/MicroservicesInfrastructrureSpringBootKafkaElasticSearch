@@ -11,30 +11,24 @@
 
     <artifactId>common-config</artifactId>
 
- <dependencies>
-     <dependency>
-         <groupId>com.microservices</groupId>
-         <artifactId>app-config-data</artifactId>
-     </dependency>
-     <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.microservices</groupId>
+            <artifactId>app-config-data</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
 
-     </dependency>
-     <dependency>
-         <groupId>org.springframework.retry</groupId>
-         <artifactId>spring-retry</artifactId>
-     </dependency>
-     <dependency>
-         <groupId>org.projectlombok</groupId>
-         <artifactId>lombok</artifactId>
-         <scope>compile</scope>
-     </dependency>
-     <dependency>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-configuration-processor</artifactId>
-         <optional>true</optional>
-     </dependency>
- </dependencies>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>sping-boot-starter-aop</artifactId>-->
+        <!--        </dependency>-->
+    </dependencies>
 
 </project>

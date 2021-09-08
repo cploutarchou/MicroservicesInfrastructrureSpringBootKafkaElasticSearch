@@ -6,10 +6,12 @@
         <artifactId>kafka</artifactId>
         <groupId>com.microservices</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kafka-producer</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.microservices</groupId>
@@ -26,9 +28,11 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
-            <version>6.2.0</version>
         </dependency>
     </dependencies>
-
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
 
 </project>

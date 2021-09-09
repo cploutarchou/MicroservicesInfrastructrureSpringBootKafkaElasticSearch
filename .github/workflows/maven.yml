@@ -20,5 +20,5 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build Application 
-      run: mvn -B package --file microservices/pom.xml
+      run: mvn -B package --file pom.xml
 

@@ -1,1 +1,0 @@
-docker run --tty --network=host confluentinc/cp-kafkacat kafkacat -b localhost:19092 -L

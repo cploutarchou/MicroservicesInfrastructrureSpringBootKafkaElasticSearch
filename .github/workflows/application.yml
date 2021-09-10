@@ -15,7 +15,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Kafka Infrastructure
-        run: docker-compose -f Docker/kafka_cluster.yml up -d
+        run: docker-compose -f Docker/network.yml:Docker/kafka_cluster.yml:Docker/app.yml up -d
         env:
           KAFKA_VERSION: 5.0.4
           ELASTIC_VERSION: 7.9.1

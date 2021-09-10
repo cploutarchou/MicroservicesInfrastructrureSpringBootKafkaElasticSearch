@@ -22,7 +22,7 @@ jobs:
           distribution: 'adopt'
       - name: Build Application
         working-directory: ${{env.root_dir}}
-        run: mvn -B package --file pom.xml
+        run: mvn install -DskipTests
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
       - name: Build Kafka Infrastructure

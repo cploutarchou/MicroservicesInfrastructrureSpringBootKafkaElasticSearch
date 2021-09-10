@@ -15,6 +15,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Kafka Infrastructure
+        working-directory: ./Docker
         env:
           COMPOSE_PATH_SEPARATOR=:
           COMPOSE_FILE: network.yml:kafka_cluster.yml:app.yml

@@ -9,14 +9,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      docker_dir: ./Docker
+      root_dir: ./
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Build Kafka Infrastructure
-        working-directory: Docker
+        working-directory: ${{env.docker_dir}}
         run: docker-compose -f network.yml:kafka_cluster.yml:app.yml up
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -25,6 +27,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build Application
-        working-directory:
+        working-directory: ${{env.root_dir}}
         run: mvn -B package --file pom.xml
 

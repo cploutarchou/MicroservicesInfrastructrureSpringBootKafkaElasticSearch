@@ -1,1 +1,2 @@
-docker-compose -f Docker/kafka_cluster.yml down -v
+cd Docker
+docker-compose  down -v

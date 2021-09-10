@@ -27,4 +27,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build Kafka Infrastructure
         working-directory: ${{env.docker_dir}}
-        run: docker-compose up
+        run: docker-compose up -d

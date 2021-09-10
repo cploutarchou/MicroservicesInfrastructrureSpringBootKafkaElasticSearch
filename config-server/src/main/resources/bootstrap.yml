@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: configserver
+    cloud:
+      config:
+        server:
+          git:
+            ssh: git@github.com:cploutarchou/MicroservicesInfrastructrureSpringBootKafkaElasticSearch.git
+            clone-on-start: true
+      fail-fast: true

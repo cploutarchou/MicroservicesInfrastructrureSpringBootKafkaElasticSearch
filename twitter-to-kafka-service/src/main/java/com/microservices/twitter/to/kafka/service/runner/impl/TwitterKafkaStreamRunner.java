@@ -7,10 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import twitter4j.FilterQuery;
-import twitter4j.TwitterException;
-import twitter4j.TwitterStream;
-import twitter4j.TwitterStreamFactory;
+import twitter4j.*;
+import twitter4j.conf.ConfigurationBuilder;
 
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
@@ -27,6 +25,11 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
 
     private TwitterStream twitterStream;
 
+    String CONSUMER_KEY = System.getenv("CONSUMER_KEY");
+    String CONSUMER_SECRET = System.getenv("CONSUMER_SECRET");
+    String ACCESS_TOKEN = System.getenv("ACCESS_TOKEN");
+    String ACCESS_TOKEN_SECRET = System.getenv("ACCESS_TOKEN_SECRET");
+
     public TwitterKafkaStreamRunner(TwitterToKafkaServiceConfigData configData,
                                     TwitterKafkaStatusListener statusListener) {
         this.twitterToKafkaServiceConfigData = configData;
@@ -35,7 +38,14 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
 
     @Override
     public void start() throws TwitterException {
-        twitterStream = new TwitterStreamFactory().getInstance();
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthConsumerKey(CONSUMER_KEY)
+                .setOAuthConsumerSecret(CONSUMER_SECRET)
+                .setOAuthAccessToken(ACCESS_TOKEN)
+                .setOAuthAccessTokenSecret(ACCESS_TOKEN_SECRET);
+        TwitterStreamFactory tf = new TwitterStreamFactory(cb.build());
+        twitterStream = tf.getInstance();
         twitterStream.addListener(twitterKafkaStatusListener);
         addFilter();
     }

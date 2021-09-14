@@ -1,5 +1,5 @@
 server:
-  port: 2888
+  port: 8888
 
 logging:
   level:

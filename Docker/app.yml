@@ -4,16 +4,35 @@ services:
     image: ${GROUP_ID}/twitter.to.kafka.service:${SERVICE_VERSION:-latest}
     ports:
       - "5005:5005"
+    volumes:
+      - "./wait-for-config-server.sh:/usr/local/bin/wait-for-config-server.sh"
+    user: root
+    entrypoint: [ "/usr/local/bin/wait-for-config-server.sh" ]
+    depends_on:
+      - config-server
     environment:
       - "JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xms128m -Xmx256m"
-      - "LOGGING_LEVEL_COM_MICROSERVICES_skeleton=info"
+      - "LOGGING_LEVEL_COM_MICROSERVICES=info"
       - "LOGGING_LEVEL_ROOT=info"
       - "KAFKA-CONFIG_TOPIC-NAME=twitter-topic"
       - "KAFKA-CONFIG_BOOTSTRAP-SERVERS=kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092"
       - "KAFKA-CONFIG_SCHEMA-REGISTRY-URL=http://schema-registry:8081"
       - "TWITTER-TO-KAFKA-SERVICE_ENABLE-MOCK-TWEETS=false"
+      - "SPRING_CLOUD_CONFIG_URI=http://config-server:8888"
+      - "CONSUMER_KEY=${CONSUMER_KEY}"
+      - "CONSUMER_SECRET=${CONSUMER_SECRET}"
+      - "ACCESS_TOKEN=${ACCESS_TOKEN}"
+      - "ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}"
+    networks:
+      - ${GLOBAL_NETWORK:-services}
+  config-server:
+    image: ${GROUP_ID}/config.server:${SERVICE_VERSION:-latest}
+    ports:
+      - "8888:8888"
+    environment:
+      - "JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006 -Xms128m -Xmx256m"
+      - "GIT_USERNAME=${GIT_USERNAME}"
+      - "GIT_PASSWORD=${GIT_PASSWORD}"
     networks:
       - ${GLOBAL_NETWORK:-services}
 
-volumes:
-    logs:

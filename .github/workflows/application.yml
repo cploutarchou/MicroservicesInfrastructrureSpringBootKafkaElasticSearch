@@ -12,6 +12,19 @@ jobs:
     env:
       docker_dir: ./Docker
       root_dir: ./
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+      COMPOSE_FILE: ${{ secrets.COMPOSE_FILE }}
+      COMPOSE_PATH_SEPARATOR: ${{ secrets.COMPOSE_PATH_SEPARATOR }}
+      CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+      CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+      ELASTIC_VERSION: ${{ secrets.ELASTIC_VERSION }}
+      GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+      GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+      GLOBAL_NETWORK: ${{ secrets.GLOBAL_NETWORK }}
+      GROUP_ID: ${{ secrets.GROUP_ID }}
+      KAFKA_VERSION: ${{ secrets.KAFKA_VERSION }}
+      SERVICE_VERSION: ${{ secrets.SERVICE_VERSION }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2

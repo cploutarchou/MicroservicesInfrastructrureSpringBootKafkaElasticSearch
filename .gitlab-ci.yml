@@ -34,7 +34,7 @@ after_script:
   - echo "After script section"
   - mvn clean
 Run Compose:
+  image: ubuntu:latest
   script:
     - echo "Run script with $DEPLOY_VARIABLE as an argument"
-    - cd Docker/
-    - docker-compose up -d
+    - ./scripts/start.sh

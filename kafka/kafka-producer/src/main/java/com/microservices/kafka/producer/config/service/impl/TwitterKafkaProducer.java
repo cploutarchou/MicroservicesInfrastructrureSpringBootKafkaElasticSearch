@@ -18,7 +18,7 @@ public class TwitterKafkaProducer implements KafkaProducer<Long, TwitterAvroMode
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterKafkaProducer.class);
 
-    private KafkaTemplate<Long, TwitterAvroModel> kafkaTemplate;
+    private final KafkaTemplate<Long, TwitterAvroModel> kafkaTemplate;
 
     public TwitterKafkaProducer(KafkaTemplate<Long, TwitterAvroModel> template) {
         this.kafkaTemplate = template;

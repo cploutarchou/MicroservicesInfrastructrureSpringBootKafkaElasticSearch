@@ -36,4 +36,5 @@ after_script:
 Run Compose:
   script:
     - echo "Run script with $DEPLOY_VARIABLE as an argument"
-    - ./scripts/start.sh
+    - cd Docker/
+    - docker-compose up -d

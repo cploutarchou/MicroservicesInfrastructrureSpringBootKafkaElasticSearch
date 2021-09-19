@@ -1,7 +1,6 @@
 # Pipeline Status : [![pipeline status](https://cygit.eu/public-projects/MicroservicesInfrastructrureSpringBootKafkaElasticSearch/badges/master/pipeline.svg)](https://cygit.eu/public-projects/MicroservicesInfrastructrureSpringBootKafkaElasticSearch/-/commits/master)
 
 # Getting Started
-_________________
 ### Reference Documentation
 For further reference, please consider the following sections:
 

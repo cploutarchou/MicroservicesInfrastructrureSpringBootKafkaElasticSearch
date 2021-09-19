@@ -1,5 +1,5 @@
 #Pipeline Status : [![pipeline status](https://cygit.eu/public-projects/MicroservicesInfrastructrureSpringBootKafkaElasticSearch/badges/master/pipeline.svg)](https://cygit.eu/public-projects/MicroservicesInfrastructrureSpringBootKafkaElasticSearch/-/commits/master)
-_________
+
 # Getting Started
 _________________
 ### Reference Documentation
@@ -8,8 +8,6 @@ For further reference, please consider the following sections:
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/)
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/maven-plugin/reference/html/#build-image)
-
-
 
 # Running the application
 - Please enter the correct credentials in twitter4j.properties file.

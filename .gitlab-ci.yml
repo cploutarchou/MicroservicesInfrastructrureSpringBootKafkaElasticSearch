@@ -1,7 +1,16 @@
 stages:
   - wait_for_other_pipelines
+  - build-sample-job
 
 Wait for other pipelines:
   stage: wait_for_other_pipelines
   script:
     - python3 gitlab-ci-controller.py
+
+
+build-sample-job:
+  stage: build-sample-job
+  script:
+    - echo "Check the ruby version, then build some Ruby project files:"
+    - python3 -v
+    - python3

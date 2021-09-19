@@ -32,4 +32,8 @@ deploy:
     - main
 after_script:
   - echo "After script section"
-  - echo "mvn clean"
+  - mvn clean
+Run Compose:
+  script:
+    - echo "Run script with $DEPLOY_VARIABLE as an argument"
+    - ./scripts/start.sh

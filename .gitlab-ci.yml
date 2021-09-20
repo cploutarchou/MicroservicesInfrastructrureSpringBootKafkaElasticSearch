@@ -26,14 +26,21 @@ verify:jdk11:
 deploy:
   image: maven:3.6-jdk-11
   script:
-    - echo "Deploying dependencies"
-    - mvn deploy -s ci_settings.xml -DskipTests
+    - 'mvn deploy -s ci_settings.xml'
   only:
     - main
+
 Run Compose:
   image: ubuntu:latest
   script:
     - echo "Run script with $DEPLOY_VARIABLE as an argument"
     - cd Docker/
     - docker-compose up -d
-    - docker-compose down -v
+
+maven-build:
+  image: maven:3-jdk-8
+  stage: build
+  script: "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar

@@ -38,7 +38,7 @@ Run Compose:
     - docker-compose up -d
 
 maven-build:
-  image: maven:3-jdk-8
+  image: maven:3.6-jdk-11
   stage: build
   script: "mvn package -B  -DskipTests"
   artifacts:

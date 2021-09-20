@@ -1,41 +1,38 @@
+image: gitlab/dind
+services:
+  - docker:dind
+
 variables:
-  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true
-    -DdeployAtEnd=true"
-  JAVA_HOME: "$JAVA_11_HOME"
-before_script:
-  - echo "Before script section"
-image: maven:3.8.2-jdk-11-slim
-cache:
-  paths:
-    - ".m2/repository"
-".verify":
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+  USER_GITLAB: sanjaybsm
+  APP_NAME: springbootgitlab
+  REPO: springbootlabtest
+
+stages:
+  - build
+  - test
+  - docker
+
+maven-build:
+  image: maven:3-jdk-8
+  stage: build
+  script: "mvn clean package -B"
+  artifacts:
+    paths:
+      - target/*.jar
+
+maven-test:
+  image: maven:3-jdk-8
   stage: test
+  script: "mvn test"
+  artifacts:
+    paths:
+      - target/*.jar
+
+docker-build:
+  stage: docker
   script:
-    - echo "Starting installing Dependencies"
-    - mvn install -DskipTests
-  except:
-    variables:
-      - "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
-verify:jdk11:
-  stage: test
-  script:
-    - mvn install -DskipTests
-  except:
-    variables:
-      - "$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH"
-deploy:
-  image: maven:3.6-jdk-11
-  script:
-    - echo "Deploying dependencies"
-    - mvn deploy -s ci_settings.xml -DskipTests
-  only:
-    - main
-after_script:
-  - echo "After script section"
-  - mvn clean
-Run Compose:
-  image: ubuntu:latest
-  script:
-    - echo "Run script with $DEPLOY_VARIABLE as an argument"
-    - cd Docker/
-    - docker-compose up -d
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build -t "$CI_REGISTRY_IMAGE${tag}" .
+    - docker push "$CI_REGISTRY_IMAGE${tag}"

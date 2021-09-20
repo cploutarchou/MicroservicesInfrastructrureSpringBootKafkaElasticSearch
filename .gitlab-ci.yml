@@ -39,3 +39,16 @@ Run Compose:
     - echo "Run script with $DEPLOY_VARIABLE as an argument"
     - cd Docker/
     - docker-compose up -d
+
+maven-build:
+  image: maven:3-jdk-8
+  script: "mvn package -B"
+  artifacts:
+    paths:
+      - target/*.jar
+
+docker-build:
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" .
+    - docker push "$CI_REGISTRY_IMAGE${tag}"

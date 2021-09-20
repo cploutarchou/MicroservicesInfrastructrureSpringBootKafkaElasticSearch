@@ -30,9 +30,6 @@ deploy:
     - mvn deploy -s ci_settings.xml -DskipTests
   only:
     - main
-after_script:
-  - echo "After script section"
-  - mvn clean
 Run Compose:
   image: ubuntu:latest
   script:

@@ -10,7 +10,7 @@ stages:
 maven-build:
   image: maven:3-jdk-8
   stage: build
-  script: "mvn clean package -B"
+  script: "mvn install -DskipTests"
   artifacts:
     paths:
       - target/*.jar
@@ -18,7 +18,7 @@ maven-build:
 maven-test:
   image: maven:3-jdk-8
   stage: test
-  script: "mvn test"
+  script: "mvn install -DskipTests"
   artifacts:
     paths:
       - target/*.jar

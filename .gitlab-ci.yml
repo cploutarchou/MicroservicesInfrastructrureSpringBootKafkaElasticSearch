@@ -8,7 +8,7 @@ stages:
   - docker
 
 maven-build:
-  image: maven:3-jdk-8
+  image: maven:3.8.2-jdk-11-slim
   stage: build
   script: "mvn install -DskipTests"
   artifacts:
@@ -16,7 +16,7 @@ maven-build:
       - target/*.jar
 
 maven-test:
-  image: maven:3-jdk-8
+  image: maven:3.8.2-jdk-11-slim
   stage: test
   script: "mvn install -DskipTests"
   artifacts:

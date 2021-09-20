@@ -4,10 +4,11 @@ variables:
   JAVA_HOME: "$JAVA_11_HOME"
 before_script:
   - echo "Before script section"
+  - mvn dependency:purge-local-repository
 image: maven:3.8.2-jdk-11-slim
 cache:
   paths:
-    - "./root/m2/repository"
+    - "./m2/repository"
 ".verify":
   stage: test
   script:

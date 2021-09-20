@@ -2,13 +2,6 @@ image: gitlab/dind
 services:
   - docker:dind
 
-variables:
-  DOCKER_DRIVER: overlay
-  SPRING_PROFILES_ACTIVE: gitlab-ci
-  USER_GITLAB: sanjaybsm
-  APP_NAME: springbootgitlab
-  REPO: springbootlabtest
-
 stages:
   - build
   - test

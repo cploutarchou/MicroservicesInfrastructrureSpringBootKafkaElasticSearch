@@ -1,0 +1,1 @@
+curl --location --request PUT 'localhost:9200/twitter-index'

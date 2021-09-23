@@ -6,7 +6,7 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true -DskipTests"
-  JAVA_HOME: "$JAVA_11_HOME"
+  JAVA_HOME: "$JAVA_HOME"
 # This template uses jdk8 for verifying and deploying images
 image: maven:3.8.2-jdk-11-slim
 

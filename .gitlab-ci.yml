@@ -11,11 +11,8 @@ build manver packages:
 
 deploy maven packages:
   stage: deploy
+  image: maven:3.6.3-jdk-11-slim
   script:
-    - echo "This job deploys the code. It runs when the test stage completes."
-        - if [ ! -f ci_settings.xml ];
-      then echo "CI settings missing\! If deploying to GitLab Maven Repository, please see https://docs.gitlab.com/ee/user/packages/maven_repository/index.html#create-maven-packages-with-gitlab-cicd for instructions.";
-      fi
     - 'mvn $MAVEN_CLI_OPTS deploy -s ci_settings.xml'
   only:
     variables:
@@ -29,7 +26,7 @@ deploy docker containers:
     - docker:dind
   script:
     - echo "java.runtime.version=11" > system.properties
-    - mvn spring-boot:build-image -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.imageName=SpringBootImage_${CI_JOB_ID} -Dspring-boot.build-image.publish=true
+    - mvn spring-boot:build-image -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.publish=true
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

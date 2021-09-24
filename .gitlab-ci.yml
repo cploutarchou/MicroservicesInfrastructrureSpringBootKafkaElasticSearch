@@ -25,7 +25,8 @@ deploy docker images:
   services:
     - docker:dind
   script:
-    - 'mvn spring-boot:build-image -Dspring-boot.build-image.imageName=com.microservices/config.server:0.0.1-SNAPSHOT -Dspring-boot.build-image.publish=true'
+    - 'mvn -DskipTests spring-boot:build-image -Dspring-boot.build-image.imageName=com.microservices/config.server:0.0.1-SNAPSHOT -Dspring-boot.build-image.publish=true'
+    - 'mvn -DskipTests spring-boot:build-image -Dspring-boot.build-image.imageName=com.microservices/twitter.to.kafka.service:0.0.1-SNAPSHOT -Dspring-boot.build-image.publish=true'
 
   only:
     variables:

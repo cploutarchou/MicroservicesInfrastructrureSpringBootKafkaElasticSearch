@@ -26,6 +26,7 @@ deploy docker images:
     - docker:dind
   script:
     - mvn install -DskipTests
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker push com.microservices/twitter.to.kafka.service:0.0.1-SNAPSHOT
     - docker push com.microservices/config.server:0.0.1-SNAPSHOT
   only:

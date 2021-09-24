@@ -8,17 +8,16 @@ install maven packages:
   stage: build
   script:
     - echo "This job compiles code."
-    - 'mvn install -DskipTests'
+    - mvn install -DskipTests
 
 deploy mvn packages:
   stage: deploy
   image: maven:3.6.3-jdk-11-slim
   script:
-    - 'mvn -DskipTests $MAVEN_CLI_OPTS deploy -s ci_settings.xml'
+    - mvn -DskipTests $MAVEN_CLI_OPTS deploy -s ci_settings.xml
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
 
 deploy docker images:
   stage: deploy
@@ -26,8 +25,9 @@ deploy docker images:
   services:
     - docker:dind
   script:
-    - echo "java.runtime.version=11" > system.properties
-    - mvn   -DskipTestsspring-boot:build-image  -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.publish=true
+    - mvn install -DskipTests
+    - docker push com.microservices/twitter.to.kafka.service:0.0.1-SNAPSHOT
+    - docker push com.microservices/config.server:0.0.1-SNAPSHOT
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

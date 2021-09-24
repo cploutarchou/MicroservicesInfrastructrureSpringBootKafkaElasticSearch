@@ -19,15 +19,14 @@ deploy mvn packages:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-
 deploy docker images:
   stage: deploy
   image: maven:3.6.3-jdk-11-slim
   services:
     - docker:dind
   script:
-    - echo "java.runtime.version=11" > system.properties
-    - mvn   -DskipTestsspring-boot:build-image  -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.publish=true
+    - "mvn -DskipTest spring-boot:build-image -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.imageName=com.microservices/twitter.to.kafka.service:0.0.1-SNAPSHOT -Dspring-boot.build-image.publish=true"
+    - "mvn -DskipTest spring-boot:build-image -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.imageName=com.microservices/config.server:0.0.1-SNAPSHOT-Dspring-boot.build-image.publish=true"
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

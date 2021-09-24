@@ -30,7 +30,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <spring-boot.version>2.4.0</spring-boot.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <twitter4j.version>4.0.7</twitter4j.version>
         <lombok.version>1.18.20</lombok.version>
@@ -202,22 +202,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                <source>11</source>
-                <target>11</target>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <image>
-                        <name>ghcr.io/abc/${project.artifactId}:${project.version}</name>
-                        <publish>true</publish>
-                    </image>
-                    <docker>
-                        <publishRegistry>
-                            <username>${CI_REGISTRY_USER}</username>
-                            <password>${CI_REGISTRY_PASSWORD}</password>
-                            <url>${CI_REGISTRY}</url>
-                        </publishRegistry>
-                    </docker>
+                    <source>11</source>
+                    <target>11</target>
+
                 </configuration>
             </plugin>
         </plugins>

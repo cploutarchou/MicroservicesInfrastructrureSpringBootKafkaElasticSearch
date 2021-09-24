@@ -35,7 +35,16 @@
                 <configuration>
                     <image>
                         <name>${project.groupId}/config.server:${project.version}</name>
+                        <publish>true</publish>
                     </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>${CI_REGISTRY_USER}</username>
+                            <password>${CI_REGISTRY_PASSWORD}</password>
+                            <url>${CI_REGISTRY}</url>
+                            <email>cploutarchou@gmail.com</email>
+                        </publishRegistry>
+                    </docker>
                 </configuration>
                 <executions>
                     <execution>

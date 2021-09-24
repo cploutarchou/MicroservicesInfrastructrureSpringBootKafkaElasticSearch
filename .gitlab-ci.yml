@@ -36,6 +36,7 @@ deploy docker images:
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
     - mvn install -DskipTests
+    - docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" .
     - docker push "$CI_REGISTRY_IMAGE${tag}"
   only:
     variables:

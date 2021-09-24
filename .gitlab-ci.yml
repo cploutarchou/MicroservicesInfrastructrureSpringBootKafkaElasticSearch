@@ -26,7 +26,7 @@ deploy docker containers:
     - docker:dind
   script:
     - echo "java.runtime.version=11" > system.properties
-    - mvn spring-boot:build-image -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.publish=true
+    - mvn spring-boot:build-image  -DskipTests -DCI_REGISTRY=$CI_REGISTRY -DCI_REGISTRY_USER=$CI_REGISTRY_USER -DCI_REGISTRY_PASSWORD=$CI_REGISTRY_PASSWORD -Dspring-boot.build-image.publish=true
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

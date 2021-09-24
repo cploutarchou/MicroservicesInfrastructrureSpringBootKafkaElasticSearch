@@ -2,14 +2,15 @@ stages:
   - build
   - test
   - deploy
+  - clean
 
-build manver packages:
+install maven packages:
   stage: build
   script:
     - echo "This job compiles code."
     - 'mvn install -DskipTests'
 
-deploy maven packages:
+deploy mvn packages:
   stage: deploy
   image: maven:3.6.3-jdk-11-slim
   script:
@@ -19,7 +20,7 @@ deploy maven packages:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
-deploy docker containers:
+deploy docker images:
   stage: deploy
   image: maven:3.6.3-jdk-11-slim
   services:
@@ -30,3 +31,9 @@ deploy docker containers:
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+clean mvn:
+  stage: clean
+  image: maven:3.6.3-jdk-11-slim
+  script:
+    - 'mvn clean'

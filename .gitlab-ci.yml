@@ -4,20 +4,20 @@ stages:
   - deploy
   - clean
 
-install maven packages:
-  stage: build
-  script:
-    - echo "This job compiles code."
-    - mvn install -DskipTests
-
-deploy mvn packages:
-  stage: deploy
-  image: maven:3.6.3-jdk-11-slim
-  script:
-    - mvn -DskipTests $MAVEN_CLI_OPTS deploy -s ci_settings.xml
-  only:
-    variables:
-      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#install maven packages:
+#  stage: build
+#  script:
+#    - echo "This job compiles code."
+#    - mvn install -DskipTests
+#
+#deploy mvn packages:
+#  stage: deploy
+#  image: maven:3.6.3-jdk-11-slim
+#  script:
+#    - mvn -DskipTests $MAVEN_CLI_OPTS deploy -s ci_settings.xml
+#  only:
+#    variables:
+#      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 deploy docker images:
   stage: deploy

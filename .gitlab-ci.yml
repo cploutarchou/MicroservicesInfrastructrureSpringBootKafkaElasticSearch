@@ -26,7 +26,8 @@ deploy docker images:
     - docker:dind
   script:
     - mvn install -DskipTests
-    - docker push --all-tags
+    - docker push com.microservices/twitter.to.kafka.service:0.0.1-SNAPSHOT
+    - docker push com.microservices/config.server:0.0.1-SNAPSHOT
   only:
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

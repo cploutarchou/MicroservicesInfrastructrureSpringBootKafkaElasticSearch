@@ -27,7 +27,7 @@ deploy docker images:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - mvn install -DskipTests jib:build -Djib.to.auth.username="$CI_REGISTRY_USER" -Djib.to.auth.password="$CI_REGISTRY_PASSWORD"
+    - './mvnw clean package -DskipTests=true dockerfile:build '
 
   only:
     variables:

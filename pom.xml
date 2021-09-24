@@ -202,8 +202,22 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                <source>11</source>
+                <target>11</target>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>ghcr.io/abc/${project.artifactId}:${project.version}</name>
+                        <publish>true</publish>
+                    </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>${CI_REGISTRY_USER}</username>
+                            <password>${CI_REGISTRY_PASSWORD}</password>
+                            <url>${CI_REGISTRY}</url>
+                        </publishRegistry>
+                    </docker>
                 </configuration>
             </plugin>
         </plugins>

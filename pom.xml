@@ -47,10 +47,6 @@
         <repository>
             <id>confluent</id>
             <url>https://packages.confluent.io/maven/</url>
-    <repositories>
-        <repository>
-            <id>confluent</id>
-            <url>https://packages.confluent.io/maven/</url>
         </repository>
         <repository>
             <id>gitlab-maven</id>

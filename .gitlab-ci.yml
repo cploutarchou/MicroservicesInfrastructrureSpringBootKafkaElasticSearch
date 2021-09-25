@@ -6,7 +6,6 @@ stages:
 install maven packages:
   stage: build
   script:
-    - echo "This job compiles code."
     - mvn install -DskipTests
 
 deploy mvn packages:

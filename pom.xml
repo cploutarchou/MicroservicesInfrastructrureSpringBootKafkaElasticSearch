@@ -40,7 +40,7 @@
         <kafka-avro-serializer.version>6.2.0</kafka-avro-serializer.version>
         <spring-cloud.version>2.2.6.RELEASE</spring-cloud.version>
         <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
-        <elastic.version>7.9.1</elastic.version>
+        <elastic.version>7.13.3</elastic.version>
     </properties>
 
     <repositories>

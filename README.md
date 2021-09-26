@@ -17,3 +17,6 @@ For further reference, please consider the following sections:
 the build-image goal to create docker image with mvn install command
 - Check the services.yml file under docker-compose folder which includes to compose definition 
 for microservice, twitter-to-kafka-service
+
+# Postman Collection
+URL (Postman Microservices Elastic Collection)[https://www.getpostman.com/collections/33417b687ff665e8fc65]

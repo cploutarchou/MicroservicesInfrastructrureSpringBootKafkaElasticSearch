@@ -5,9 +5,10 @@ services:
     ports:
       - "5005:5005"
     volumes:
+      - "./docker-logs:/workspace/twitter-to-kafka-service/logs"
       - "./check-config-server-started.sh:/usr/local/bin/check-config-server-started.sh"
     user: root
-    entrypoint: ["check-config-server-started.sh"]
+    entrypoint: [ "check-config-server-started.sh" ]
     depends_on:
       - config-server
       - kafka-broker-1
@@ -22,6 +23,7 @@ services:
       - "KAFKA-CONFIG_SCHEMA-REGISTRY-URL=http://schema-registry:8081"
       - "TWITTER-TO-KAFKA-SERVICE_ENABLE-MOCK-TWEETS=false"
       - "SPRING_CLOUD_CONFIG_URI=http://config-server:8888"
+      - "LOG_APP-NAME=twitter-to-kafka-service"
     networks:
       - ${GLOBAL_NETWORK:-services}
   kafka-to-elastic-service:
@@ -29,6 +31,7 @@ services:
     ports:
       - "5006:5006"
     volumes:
+      - "./docker-logs:/workspace/config-server/logs"
       - "./check-kafka-topics-created.sh:/usr/local/bin/check-kafka-topics-created.sh"
     user: root
     entrypoint: ["check-kafka-topics-created.sh"]
@@ -51,6 +54,7 @@ services:
       - "SPRING_CLOUD_CONFIG_URI=http://config-server:8888"
       - "ELASTIC-CONFIG_INDEX-NAME=twitter-index"
       - "ELASTIC-CONFIG_CONNECTION-URL=http://elastic-1:9200"
+      - "LOG_APP-NAME=kafka-to-elastic-service"
     networks:
       - ${GLOBAL_NETWORK:-services}
   config-server:

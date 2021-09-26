@@ -49,13 +49,13 @@ public class TwitterKafkaProducer implements KafkaProducer<Long, TwitterAvroMode
 
             @Override
             public void onSuccess(SendResult<Long, TwitterAvroModel> result) {
-                    RecordMetadata metadata = result.getRecordMetadata();
-                    LOG.debug("Received new metadata. Topic: {}; Partition {}; Offset {}; Timestamp {}, at time {}",
-                            metadata.topic(),
-                            metadata.partition(),
-                            metadata.offset(),
-                            metadata.timestamp(),
-                            System.nanoTime());
+                RecordMetadata metadata = result.getRecordMetadata();
+                LOG.debug("Received new metadata. Topic: {}; Partition {}; Offset {}; Timestamp {}, at time {}",
+                        metadata.topic(),
+                        metadata.partition(),
+                        metadata.offset(),
+                        metadata.timestamp(),
+                        System.nanoTime());
             }
         });
     }

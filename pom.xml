@@ -41,8 +41,14 @@
         <spring-cloud.version>2.2.6.RELEASE</spring-cloud.version>
         <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
         <elastic.version>7.13.3</elastic.version>
+        <logstash-logback-encoder.version>6.5</logstash-logback-encoder.version>
     </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+    </dependencies>
     <repositories>
         <repository>
             <id>confluent</id>
@@ -228,7 +234,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

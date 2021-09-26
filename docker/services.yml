@@ -22,6 +22,11 @@ services:
       - "KAFKA-CONFIG_SCHEMA-REGISTRY-URL=http://schema-registry:8081"
       - "TWITTER-TO-KAFKA-SERVICE_ENABLE-MOCK-TWEETS=false"
       - "SPRING_CLOUD_CONFIG_URI=http://config-server:8888"
+      - twitter4j.debug=true
+      - twitter4j.oauth.consumerKey=${CONSUMER_KEY}
+      - twitter4j.oauth.consumerSecret=${CONSUMER_SECRET}
+      - twitter4j.oauth.accessToken=${ACCESS_TOKEN}
+      - twitter4j.oauth.accessTokenSecret=${ACCESS_TOKEN_SECRET}
     networks:
       - ${GLOBAL_NETWORK:-services}
   kafka-to-elastic-service:

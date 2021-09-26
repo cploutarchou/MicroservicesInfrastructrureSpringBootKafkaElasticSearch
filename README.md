@@ -19,4 +19,5 @@ the build-image goal to create docker image with mvn install command
 for microservice, twitter-to-kafka-service
 
 # Postman Collection
-URL (Postman Microservices Elastic Collection)[https://www.getpostman.com/collections/33417b687ff665e8fc65]
+URL [Postman Microservices Elastic Collection](https://www.getpostman.com/collections/33417b687ff665e8fc65)
+

@@ -20,7 +20,7 @@ services:
       - "KAFKA-CONFIG_TOPIC-NAME=twitter-topic"
       - "KAFKA-CONFIG_BOOTSTRAP-SERVERS=kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092"
       - "KAFKA-CONFIG_SCHEMA-REGISTRY-URL=http://schema-registry:8081"
-      - "TWITTER-TO-KAFKA-SERVICE_ENABLE-MOCK-TWEETS=true"
+      - "TWITTER-TO-KAFKA-SERVICE_ENABLE-MOCK-TWEETS=false"
       - "SPRING_CLOUD_CONFIG_URI=http://config-server:8888"
     networks:
       - ${GLOBAL_NETWORK:-services}

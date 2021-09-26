@@ -9,7 +9,9 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
     <artifactId>kafka-consumer</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.microservices</groupId>
@@ -24,4 +26,5 @@
             <artifactId>avro</artifactId>
         </dependency>
     </dependencies>
+
 </project>

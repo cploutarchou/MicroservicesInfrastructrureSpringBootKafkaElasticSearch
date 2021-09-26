@@ -7,8 +7,8 @@
         <groupId>com.microservices</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
+
     <artifactId>app-config-data</artifactId>
 
     <dependencies>
@@ -22,4 +22,6 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+
 </project>

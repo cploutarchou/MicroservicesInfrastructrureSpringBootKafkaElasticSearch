@@ -1,5 +1,5 @@
 #!/bin/bash
-# wait-for-config-server.sh
+# check-config-server-started.sh
 
 apt-get update -y
 

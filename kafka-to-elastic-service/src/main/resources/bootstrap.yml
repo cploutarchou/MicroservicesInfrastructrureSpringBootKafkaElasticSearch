@@ -7,5 +7,5 @@ spring:
     config:
       name: kafka-to-elastic-service,config-client
       uri: http://localhost:8888
-      username: spring_cloud_user
-      password: ${spring_cloud_user_password}
+      username: admin
+      password: pass

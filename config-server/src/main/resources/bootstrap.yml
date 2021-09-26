@@ -5,8 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/cploutarchou/microservices-app-config-repository
+          uri: https://github.com/cploutarchou/microservices-app-config-repository.git
           default-label: master
           username: ${GIT_USERNAME}
           password: ${GIT_PASSWORD}
-          clone-on-start: true

@@ -14,6 +14,18 @@
     <dependencies>
         <dependency>
             <groupId>com.microservices</groupId>
+            <artifactId>elastic-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microservices</groupId>
+            <artifactId>elastic-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microservices</groupId>
+            <artifactId>elastic-index-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microservices</groupId>
             <artifactId>kafka-consumer</artifactId>
         </dependency>
         <dependency>
@@ -40,14 +52,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.avro</groupId>
-            <artifactId>avro</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -55,6 +59,19 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>${project.groupId}/kafka.to.elastic.service:${project.version}</name>
+                    </image>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

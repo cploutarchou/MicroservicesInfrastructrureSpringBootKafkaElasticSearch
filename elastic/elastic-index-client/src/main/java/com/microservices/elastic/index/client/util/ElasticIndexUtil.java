@@ -1,4 +1,4 @@
-package com.microservices.elastic.index.client.utils;
+package com.microservices.elastic.index.client.util;
 
 import com.microservices.elastic.model.index.IndexModel;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;
@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class ElasticIndexUtils<T extends IndexModel> {
+public class ElasticIndexUtil<T extends IndexModel> {
 
     public List<IndexQuery> getIndexQueries(List<T> documents) {
-        return documents.
-                stream().map(document -> new IndexQueryBuilder()
+        return documents.stream()
+                .map(document -> new IndexQueryBuilder()
                         .withId(document.getId())
                         .withObject(document)
                         .build()
